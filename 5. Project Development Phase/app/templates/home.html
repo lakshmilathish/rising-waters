@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div>
+  <section class="hero fade-in" style="background-image: url('{{ url_for('hero_image') }}');">
+    <div class="hero-content">
+      <h1>Predict Today,<br>Protect Tomorrow.</h1>
+      <p class="lede">Advanced Machine Learning powered Flood Prediction System for Early Flood Warning and Disaster Preparedness.</p>
+      <div class="hero-actions">
+        <a href="{{ url_for('predict') }}" class="btn btn-primary btn-large">Predict Flood Risk <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#how-it-works" class="btn btn-ghost btn-large">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-container fade-in" style="animation-delay: 0.2s;">
+    <div class="glass-card stat-card">
+      <i class="fa-solid fa-bullseye stat-icon"></i>
+      <div class="stat-value">{{ accuracy }}%</div>
+      <div class="stat-label">Model Accuracy</div>
+    </div>
+    <div class="glass-card stat-card">
+      <i class="fa-solid fa-cloud-sun-rain stat-icon"></i>
+      <div class="stat-value">{{ n_features }}</div>
+      <div class="stat-label">Input Features</div>
+    </div>
+    <div class="glass-card stat-card">
+      <i class="fa-solid fa-network-wired stat-icon"></i>
+      <div class="stat-value">4</div>
+      <div class="stat-label">Machine Learning Models Compared</div>
+    </div>
+    <div class="glass-card stat-card">
+      <i class="fa-solid fa-shield-heart stat-icon"></i>
+      <div class="stat-value">24/7</div>
+      <div class="stat-label">Early Warning System</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">Why Choose Our System</h2>
+    <p class="section-subtitle">A state-of-the-art enterprise solution designed for government disaster management and meteorology departments.</p>
+    
+    <div class="features-grid">
+      <div class="glass-card feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>AI Powered Prediction</h3>
+        <p>Utilizes cutting-edge machine learning algorithms to analyze complex weather patterns.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-check-double"></i></div>
+        <h3>High Accuracy</h3>
+        <p>Trained on decades of historical Indian rainfall data ensuring reliable results.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h3>Environmental Monitoring</h3>
+        <p>Takes into account temperature, humidity, cloud cover, and seasonal rainfall totals.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-bell"></i></div>
+        <h3>Early Warning</h3>
+        <p>Provides hours of critical warning time to facilitate smooth evacuation procedures.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+        <h3>Disaster Preparedness</h3>
+        <p>Helps coordinators allocate resources precisely where they are needed most.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Easy to Use</h3>
+        <p>An intuitive dashboard that makes complex risk intelligence accessible to anyone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Our robust four-step pipeline ensures accurate risk classification in milliseconds.</p>
+    
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="timeline-icon"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+        <h4>Step 1<br>Collect Environmental Data</h4>
+        <p>Meteorological data like rainfall, temperature, and cloud cover are collected.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-icon"><i class="fa-solid fa-gears"></i></div>
+        <h4>Step 2<br>Machine Learning Analysis</h4>
+        <p>Inputs are standardized and fed into our trained AI models.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-icon"><i class="fa-solid fa-microchip"></i></div>
+        <h4>Step 3<br>Predict Flood Risk</h4>
+        <p>The system classifies the probability of a flood event occurring.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+        <h4>Step 4<br>Display Results &amp; Safety Recommendations</h4>
+        <p>Actionable intelligence is presented with clear next steps.</p>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

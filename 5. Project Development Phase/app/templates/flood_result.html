@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Flood Likely{% endblock %}
+{% block content %}
+<div class="result-header danger fade-in">
+  <h1><i class="fa-solid fa-triangle-exclamation"></i> Flood Likely</h1>
+</div>
+
+<div class="result-container fade-in" style="animation-delay: 0.2s;">
+  <div class="result-image">
+    <img src="{{ url_for('hero_image') }}" alt="Flooded streets with warning signs">
+  </div>
+  
+  <div class="result-details">
+    <div class="glass-card confidence-card">
+      <h2><i class="fa-solid fa-chart-line" style="color: var(--danger);"></i> Risk Assessment</h2>
+      <div style="font-size: 2rem; font-weight: 800; color: var(--danger); margin-bottom: 10px;">{{ probability }}%</div>
+      <div class="progress-bar">
+        <div class="progress-fill danger" style="width: {{ probability }}%;"></div>
+      </div>
+      <p style="color: var(--muted); font-size: 0.9rem; margin-top: 10px;">Confidence Percentage</p>
+    </div>
+    
+    <div class="glass-card info-card">
+      <h3><i class="fa-solid fa-shield-halved" style="color: var(--danger);"></i> Safety Precautions</h3>
+      <ul class="action-list danger">
+        <li><i class="fa-solid fa-circle-right"></i> Issue an immediate evacuation advisory for low-lying zones.</li>
+        <li><i class="fa-solid fa-circle-right"></i> Alert disaster relief coordinators and emergency services.</li>
+        <li><i class="fa-solid fa-circle-right"></i> Pre-position resources ahead of need.</li>
+      </ul>
+    </div>
+    
+    <div class="glass-card info-card">
+      <h3><i class="fa-solid fa-list-check" style="color: var(--danger);"></i> Emergency Checklist</h3>
+      <ul class="action-list danger">
+        <li><i class="fa-solid fa-check-square"></i> Activate local alarms</li>
+        <li><i class="fa-solid fa-check-square"></i> Monitor river levels continuously</li>
+        <li><i class="fa-solid fa-check-square"></i> Prepare emergency shelters</li>
+      </ul>
+    </div>
+    
+    <div style="margin-top: 20px;">
+      <a href="{{ url_for('predict') }}" class="btn btn-primary btn-large">Predict Again <i class="fa-solid fa-rotate-right"></i></a>
+    </div>
+  </div>
+</div>
+{% endblock %}

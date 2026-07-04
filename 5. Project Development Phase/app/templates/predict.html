@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Predict Flood Risk{% endblock %}
+{% block content %}
+<div class="predict-container fade-in">
+  <div class="glass-card predict-form-card">
+    <h2>Predict Flood Risk</h2>
+    <p>Enter the environmental readings. All fields are mandatory.</p>
+    
+    <form method="post" action="{{ url_for('predict') }}" novalidate>
+      {% for group_title, field_list in groups %}
+        <div class="form-group-title">{{ group_title }}</div>
+        <div class="field-grid">
+          {% for f in field_list %}
+            {% set m = meta[f] %}
+            <div class="field">
+              {% if f == 'average_june_rainfall_3yr' %}
+                <label for="{{ f }}"><i class="fa-solid fa-cloud-rain"></i> Average June Rainfall</label>
+                <div class="input-unit">
+                  <input type="number" step="{{ m.step }}" min="{{ m.min }}" max="{{ m.max }}" id="{{ f }}" name="{{ f }}" value="{{ values.get(f, m.default) }}" class="{{ 'has-error' if errors and errors.get(f) else '' }}" required>
+                  <span class="unit">{{ m.unit }}</span>
+                </div>
+                <div class="help-text">Average of June rainfall</div>
+              {% else %}
+                <label for="{{ f }}"><i class="fa-solid fa-asterisk"></i> {{ m.label }}</label>
+                <div class="input-unit">
+                  <input type="number" step="{{ m.step }}" min="{{ m.min }}" max="{{ m.max }}" id="{{ f }}" name="{{ f }}" value="{{ values.get(f, m.default) }}" class="{{ 'has-error' if errors and errors.get(f) else '' }}" required>
+                  <span class="unit">{{ m.unit }}</span>
+                </div>
+                <div class="help-text">{{ m.help }}</div>
+              {% endif %}
+              {% if errors and errors.get(f) %}
+                <div class="field-error" style="color: var(--danger); font-size: 0.8rem; margin-top: 4px;">{{ errors[f] }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+      
+      <div style="margin-top: 30px;">
+        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Predict Flood Risk <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="predict-sidebar">
+    <div class="illustration-card">
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000&auto=format&fit=crop" alt="High quality river and mountain landscape">
+    </div>
+    
+    <div class="glass-card info-card">
+      <h3><i class="fa-solid fa-clipboard-list"></i> Input Guidelines</h3>
+      <ul>
+        <li>Enter accurate values.</li>
+        <li>Use correct measurement units.</li>
+        <li>All fields are mandatory.</li>
+      </ul>
+    </div>
+    
+    <div class="glass-card info-card">
+      <h3><i class="fa-solid fa-cloud-sun"></i> Weather Information</h3>
+      <ul>
+        <li>Measurements are based on Indian Meteorological standards.</li>
+        <li>Ensure recent 24h data is used where applicable.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
