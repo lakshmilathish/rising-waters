@@ -4,6 +4,8 @@ An end-to-end machine learning internship project that predicts flood risk from 
 weather readings, and serves live predictions through a Flask web app. This repository contains
 the full project lifecycle — from ideation to deployment and demonstration — organized by phase.
 
+**🔗 Live demo:** [rising-waters-gx15.onrender.com](https://rising-waters-gx15.onrender.com)
+
 ---
 
 ## 📌 Problem Statement
