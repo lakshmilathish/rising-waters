@@ -5,8 +5,8 @@ weather readings, and serves live predictions through a Flask web app. This repo
 the full project lifecycle — from ideation to deployment and demonstration — organized by phase.
 
 **🔗 Live demo:** [rising-waters-gx15.onrender.com](https://rising-waters-gx15.onrender.com)
-
----
+**🔗 demo video:[drive.google.com/drive/folders/1y-EpVJrSjl9vZNK-FggB_ZLJStevhWzH?usp=drive_link](https://drive.google.com/drive/folders/1y-EpVJrSjl9vZNK-FggB_ZLJStevhWzH?usp=drive_link)**
+---------------------------------------------------------------------------------------------
 
 ## 📌 Problem Statement
 
@@ -43,6 +43,36 @@ rising waters/
 
 The **`5. Project Development Phase/`** folder is where the working system lives — that's the
 part you'd actually run. Its own README has full setup instructions, but the short version:
+
+```
+Rising Waters/
+├── README.md                    ← you are here
+├── requirements.txt              top-level dependency list (for the notebook + app)
+├── Dockerfile                    container build for IBM Cloud Code Engine / any Docker host
+├── Procfile                      buildpack-style deployment (Cloud Foundry / Heroku-style PaaS)
+├── manifest.yml                  IBM Cloud Foundry deployment manifest
+│
+├── data/
+│   ├── rainfall in india 1901-2015.xlsx     historical rainfall, 36 subdivisions, 1901-2015
+│   └── flood dataset.xlsx                   115 labelled weather/rainfall records + flood target
+│
+├── notebook/
+│   └── Flood_Prediction_Analysis.ipynb      full pipeline: EDA → preprocessing → modeling → save
+│
+├── model/
+│   └── floods.save                          trained model + StandardScaler, bundled with joblib
+│
+└── app/
+    ├── app.py                                Flask application
+    ├── requirements.txt
+    ├── templates/
+    │   ├── base.html
+    │   ├── home.html                         Home Page
+    │   ├── predict.html                      Prediction Input Page
+    │   ├── flood_result.html                 Flood Chance Result Page
+    │   └── no_flood_result.html              No Flood Chance Result Page
+    └── static/css/style.css
+```
 
 ```bash
 cd "5. Project Development Phase"
