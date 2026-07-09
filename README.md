@@ -6,8 +6,7 @@ the full project lifecycle — from ideation to deployment and demonstration —
 
 **🔗 Live demo:** [rising-waters-gx15.onrender.com](https://rising-waters-gx15.onrender.com)
 
-**🔗 demo video:**https://drive.google.com/drive/folders/1y-EpVJrSjl9vZNK-FggB_ZLJStevhWzH?usp=drive_link
----
+🔗 Live demo:[drive.google.com/drive/folders/1y-EpVJrSjl9vZNK-FggB_ZLJStevhWzH?usp=drive_link](https://drive.google.com/drive/folders/1y-EpVJrSjl9vZNK-FggB_ZLJStevhWzH?usp=drive_link)
 
 ## 📌 Problem Statement
 
@@ -44,6 +43,7 @@ rising waters/
 
 The **`5. Project Development Phase/`** folder is where the working system lives — that's the
 part you'd actually run. Its own README has full setup instructions, but the short version:
+
 ```
 Rising Waters/
 ├── README.md                    ← you are here
