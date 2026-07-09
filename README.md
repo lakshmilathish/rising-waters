@@ -6,8 +6,6 @@ the full project lifecycle — from ideation to deployment and demonstration —
 
 **🔗 Live demo:** [rising-waters-gx15.onrender.com](https://rising-waters-gx15.onrender.com)
 
-🔗 Live demo:[drive.google.com/drive/folders/1y-EpVJrSjl9vZNK-FggB_ZLJStevhWzH?usp=drive_link](https://drive.google.com/drive/folders/1y-EpVJrSjl9vZNK-FggB_ZLJStevhWzH?usp=drive_link)
-
 ## 📌 Problem Statement
 
 Flood-prone regions often lack a quick, localized way to assess flood risk from current rainfall
